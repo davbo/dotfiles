@@ -12,6 +12,7 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-fugitive'
 Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'wincent/Command-T'
@@ -52,12 +53,13 @@ set number
 set backspace=indent,eol,start
 set laststatus=2
 set undofile
+set backup                        " enable backups
 set mouse=a
 
 " Backups
 set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
-set backup                        " enable backups
+set undodir=~/.vim/tmp/undo//
 
 " Leader
 let mapleader = ","
@@ -168,7 +170,7 @@ nnoremap ; :
 inoremap # X<BS>#
 
 if has('gui_running')
-    set gfn=Inconsolata-g\ Medium\ 11
+    set gfn=Inconsolata\ Medium\ 11
 
     set go-=T
     set go-=l
