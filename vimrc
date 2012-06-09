@@ -22,6 +22,7 @@ Bundle 'SuperTab'
 Bundle 'Align'
 Bundle 'YankRing.vim'
 Bundle "majutsushi/tagbar"
+Bundle "rodjek / vim-puppet"
 
 " tComment
 Bundle "tComment"
