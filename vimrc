@@ -142,6 +142,18 @@ for p in sys.path:
         vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
 EOF
 
+" From http://fishshell.org/wiki/moin.cgi/Recipes at 2008-01-06
+" Why does VIM give error messages when started from fish?
+" (Thanks to James Vega for this solution) 
+"
+" When run from the fish shell, VIM gives error messages like: "E484: Can't open file /tmp/v916556/0" 
+"
+" The problem occurs because VIM expects to be run from a POSIX shell, although this is not mentioned anywhere in the documentation. A workaround is to add the following lines to the your local ~/.vimrc or global /etc/vimrc file:
+if $SHELL =~ 'bin/fish'
+    set shell=/bin/sh
+endif
+" Assuming /bin/sh is a link to a POSIX compliant shell - even minimal shells like 'ash' or 'dash' will do.
+
 " Syntax for multiple tag files are
 " set tags=/my/dir1/tags, /my/dir2/tags
 set tags=tags;$HOME/.vim/tags/
