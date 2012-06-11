@@ -12,6 +12,8 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/syntastic'
 Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'wincent/Command-T'
@@ -21,6 +23,10 @@ Bundle 'SuperTab'
 Bundle 'Align'
 Bundle 'YankRing.vim'
 Bundle "majutsushi/tagbar"
+Bundle 'rodjek/vim-puppet'
+
+" BAD pyflakes!
+let g:pyflakes_use_quickfix = 0
 
 " tComment
 Bundle "tComment"
@@ -54,6 +60,8 @@ set laststatus=2
 set undofile
 set mouse=a
 
+" Undo files
+set undodir=~/.vim/tmp/undo//     " undo files
 " Backups
 set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
@@ -77,14 +85,16 @@ map <leader><space> :noh<cr>
 syntax on
 set t_Co=256
 set background=dark
-colorscheme wombat256
+colorscheme wombat
 
 set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
-set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]%=[%l/%L\]\ (%p%%)
+set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [TYPE=%Y\ %{&ff}]%=[%l/%L\]\ (%p%%)
 filetype plugin indent on
 au FileType py set autoindent
 au FileType py set smartindent
 au FileType py set foldmethod=indent
+
+au BufNewFile,BufRead *.pp set filetype=puppet
 
 " NERD Tree
 map <F2> :NERDTreeToggle<cr>
@@ -140,13 +150,13 @@ map <F4> :TagbarToggle<CR>
 
 " Ack
 map <leader>a :Ack 
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 " Yankring
 nnoremap <silent> <F3> :YRShow<cr>
 nnoremap <silent> <leader>y :YRShow<cr>
 
 " Faster Esc
-inoremap <Esc> <nop>
 inoremap jj <ESC>
 
 " Diff
@@ -168,7 +178,7 @@ nnoremap ; :
 inoremap # X<BS>#
 
 if has('gui_running')
-    set gfn=Inconsolata-g\ Medium\ 11
+    set gfn=Inconsolata\ Medium\ 12
 
     set go-=T
     set go-=l
