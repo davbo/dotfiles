@@ -58,6 +58,7 @@ set number
 set backspace=indent,eol,start
 set laststatus=2
 set undofile
+set backup                        " enable backups
 set mouse=a
 
 " Undo files
@@ -65,7 +66,7 @@ set undodir=~/.vim/tmp/undo//     " undo files
 " Backups
 set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
-set backup                        " enable backups
+set undodir=~/.vim/tmp/undo//
 
 " Leader
 let mapleader = ","

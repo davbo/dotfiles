@@ -1,0 +1,6 @@
+[user]
+    name = Dave King
+    email = dave@davbo.org
+
+[core]
+    editor = vim
