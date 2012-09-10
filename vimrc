@@ -24,6 +24,8 @@ Bundle 'Align'
 Bundle 'YankRing.vim'
 Bundle "majutsushi/tagbar"
 Bundle 'rodjek/vim-puppet'
+Bundle 'uggedal/jinja-vim'
+Bundle 'groenewege/vim-less'
 
 " BAD pyflakes!
 let g:pyflakes_use_quickfix = 0
