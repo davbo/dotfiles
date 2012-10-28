@@ -21,7 +21,8 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'Markdown'
 Bundle 'SuperTab'
 Bundle 'Align'
-Bundle 'YankRing.vim'
+Bundle 'maxbrunsfeld/vim-yankstack'
+Bundle 'fholgado/minibufexpl.vim'
 Bundle "majutsushi/tagbar"
 Bundle 'rodjek/vim-puppet'
 Bundle 'uggedal/jinja-vim'
