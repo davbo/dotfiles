@@ -26,6 +26,7 @@ Bundle "majutsushi/tagbar"
 Bundle 'rodjek/vim-puppet'
 Bundle 'uggedal/jinja-vim'
 Bundle 'groenewege/vim-less'
+Bundle 'JavaScript-Indent'
 
 " BAD pyflakes!
 let g:pyflakes_use_quickfix = 0
