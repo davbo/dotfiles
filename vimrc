@@ -27,6 +27,7 @@ Bundle 'rodjek/vim-puppet'
 Bundle 'uggedal/jinja-vim'
 Bundle 'groenewege/vim-less'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'reusee/vim.rust'
 
 " BAD pyflakes!
 let g:pyflakes_use_quickfix = 0
