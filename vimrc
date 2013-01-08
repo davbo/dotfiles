@@ -17,7 +17,6 @@ Bundle 'scrooloose/syntastic'
 Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'wincent/Command-T'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'Markdown'
 Bundle 'SuperTab'
 Bundle 'Align'
@@ -27,6 +26,7 @@ Bundle "majutsushi/tagbar"
 Bundle 'rodjek/vim-puppet'
 Bundle 'uggedal/jinja-vim'
 Bundle 'groenewege/vim-less'
+Bundle 'altercation/vim-colors-solarized'
 
 " BAD pyflakes!
 let g:pyflakes_use_quickfix = 0
@@ -89,7 +89,7 @@ map <leader><space> :noh<cr>
 syntax on
 set t_Co=256
 set background=dark
-colorscheme wombat
+colorscheme solarized
 
 set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [TYPE=%Y\ %{&ff}]%=[%l/%L\]\ (%p%%)
