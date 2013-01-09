@@ -127,9 +127,10 @@ au BufNewFile,BufRead *.less set filetype=less
 au BufRead,BufNewFile *.scss set filetype=scss
 
 au BufNewFile,BufRead *.m*down set filetype=markdown
-au BufNewFile,BufRead *.m*down nnoremap <leader>1 yypVr=
-au BufNewFile,BufRead *.m*down nnoremap <leader>2 yypVr-
-au BufNewFile,BufRead *.m*down nnoremap <leader>3 I### <ESC>
+au BufNewFile,BufRead *.md set filetype=markdown
+au FileType markdown nnoremap <leader>1 yypVr=
+au FileType markdown nnoremap <leader>2 yypVr-
+au FileType markdown nnoremap <leader>3 I### <ESC>
 
 " Auto completion via ctrl-space (instead of the nasty ctrl-x ctrl-o)
 set omnifunc=pythoncomplete#Complete
