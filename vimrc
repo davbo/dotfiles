@@ -22,7 +22,6 @@ Bundle 'Markdown'
 Bundle 'SuperTab'
 Bundle 'Align'
 Bundle 'maxbrunsfeld/vim-yankstack'
-Bundle 'fholgado/minibufexpl.vim'
 Bundle "majutsushi/tagbar"
 Bundle 'rodjek/vim-puppet'
 Bundle 'uggedal/jinja-vim'
@@ -168,10 +167,6 @@ map <F4> :TagbarToggle<CR>
 " Ack
 map <leader>a :Ack 
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-
-" Yankring
-nnoremap <silent> <F3> :YRShow<cr>
-nnoremap <silent> <leader>y :YRShow<cr>
 
 " Faster Esc
 inoremap jj <ESC>
