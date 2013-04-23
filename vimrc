@@ -28,6 +28,8 @@ Bundle 'groenewege/vim-less'
 Bundle 'JavaScript-Indent'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'reusee/vim.rust'
+Bundle 'Rykka/riv.vim'
+Bundle 'tmhedberg/SimpylFold'
 
 " BAD pyflakes!
 let g:pyflakes_use_quickfix = 0
@@ -97,7 +99,6 @@ set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [TYPE=%Y\ %{&ff}]%=[%l/%L\]
 filetype plugin indent on
 au FileType py set autoindent
 au FileType py set smartindent
-au FileType py set foldmethod=indent
 
 au BufNewFile,BufRead *.pp set filetype=puppet
 
