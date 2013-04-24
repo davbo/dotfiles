@@ -30,9 +30,11 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'reusee/vim.rust'
 Bundle 'Rykka/riv.vim'
 Bundle 'tmhedberg/SimpylFold'
+Bundle 'nono/vim-handlebars'
 
 " BAD pyflakes!
 let g:pyflakes_use_quickfix = 0
+let g:syntastic_python_checker_args = "--ignore=E128"
 
 " tComment
 Bundle "tComment"
@@ -126,6 +128,9 @@ au BufNewFile,BufRead *.html map <leader>ft Vatzf
 " Various syntax stuff
 au BufNewFile,BufRead *.less set filetype=less
 au BufRead,BufNewFile *.scss set filetype=scss
+
+" Handlebars
+au BufRead,BufNewFile *.handlebars set filetype=handlebars
 
 au BufNewFile,BufRead *.m*down set filetype=markdown
 au BufNewFile,BufRead *.md set filetype=markdown
