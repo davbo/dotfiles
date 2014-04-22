@@ -31,6 +31,8 @@ Bundle 'reusee/vim.rust'
 Bundle 'Rykka/riv.vim'
 Bundle 'tmhedberg/SimpylFold'
 Bundle 'nono/vim-handlebars'
+Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'miripiruni/CSScomb-for-Vim'
 
 " BAD pyflakes!
 let g:pyflakes_use_quickfix = 0
@@ -94,13 +96,14 @@ map <leader><space> :noh<cr>
 syntax on
 set t_Co=256
 set background=dark
-colorscheme solarized
+colorscheme wombat
 
 set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [TYPE=%Y\ %{&ff}]%=[%l/%L\]\ (%p%%)
 filetype plugin indent on
 au FileType py set autoindent
 au FileType py set smartindent
+let g:pymode_indent = 0
 
 au BufNewFile,BufRead *.pp set filetype=puppet
 
@@ -118,6 +121,7 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 map <leader>w <C-w>v<C-w>l
+map <leader>c :bp\|bd #<CR>
 
 " Folding
 set foldlevelstart=0
@@ -199,6 +203,7 @@ inoremap # X<BS>#
 
 if has('gui_running')
     set gfn=Inconsolata\ Medium\ 12
+    colorscheme solarized
 
     set go-=T
     set go-=l
