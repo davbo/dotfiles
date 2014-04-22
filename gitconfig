@@ -1,7 +1,13 @@
 [user]
-    name = Dave King
-    email = dave@davbo.org
+	name = David King
+	email = dave@davbo.org
 [core]
     editor = vim
 [color]
     ui = true
+[alias]
+    ci = commit -v
+    s = status
+    l = log --oneline --graph --decorate --all
+[push]
+	default = upstream
