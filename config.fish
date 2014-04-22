@@ -1,7 +1,17 @@
 set -g -x fish_greeting ''
 set -g -x EDITOR vim
 
+# Oxford
+set -g -x PRIVATE_PYPI "http://localshop.oucs.ox.ac.uk/simple"
+set -g -x MOXIE_SETTINGS "/home/dave/projects/moxie/local_settings.yaml"
+set -g -x MOXIE_CELERYCONFIG "/home/dave/projects/moxie/local_celeryconfig.yaml"
+
+set -g -x adb_user "dave"
+
 set -g -x PIP_DOWNLOAD_CACHE "$HOME/.pip/cache"
+
+set -gx PATH /home/dave/android-sdks/platform-tools $PATH
+set -gx PATH /home/dave/android-sdks/tools $PATH
 
 # Stop the activate.fish prompt setting an ugly prompt
 set -g -x VIRTUAL_ENV_DISABLE_PROMPT 1
