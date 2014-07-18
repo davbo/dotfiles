@@ -1,45 +1,54 @@
-filetype off
-filetype plugin indent on
 set nocompatible
+filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
-" My Bundles here:
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/syntastic'
-Bundle 'mileszs/ack.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'wincent/Command-T'
-Bundle 'Markdown'
-Bundle 'SuperTab'
-Bundle 'Align'
-Bundle 'maxbrunsfeld/vim-yankstack'
-Bundle "majutsushi/tagbar"
-Bundle 'rodjek/vim-puppet'
-Bundle 'uggedal/jinja-vim'
-Bundle 'groenewege/vim-less'
-Bundle 'JavaScript-Indent'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'reusee/vim.rust'
-Bundle 'Rykka/riv.vim'
-Bundle 'tmhedberg/SimpylFold'
-Bundle 'nono/vim-handlebars'
-Bundle 'hynek/vim-python-pep8-indent'
-Bundle 'miripiruni/CSScomb-for-Vim'
+" My Plugins here:
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/syntastic'
+Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'wincent/Command-T'
+Plugin 'Markdown'
+Plugin 'SuperTab'
+Plugin 'Align'
+Plugin 'maxbrunsfeld/vim-yankstack'
+Plugin 'majutsushi/tagbar'
+Plugin 'rodjek/vim-puppet'
+Plugin 'groenewege/vim-less'
+Plugin 'JavaScript-Indent'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'nono/vim-handlebars'
+Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'miripiruni/CSScomb-for-Vim'
+Plugin 'wombat256.vim'
+Plugin 'rstacruz/sparkup'
+Plugin 'bling/vim-airline'
+Plugin 'tComment'
+
+call vundle#end()
+
+filetype plugin indent on
+
+" sparkup
+let g:sparkupNextMapping = '<c-x>'
+
+set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [TYPE=%Y\ %{&ff}]%=[%l/%L\]\ (%p%%)
 
 " BAD pyflakes!
 let g:pyflakes_use_quickfix = 0
 let g:syntastic_python_checker_args = "--ignore=E128"
+let g:syntastic_javascript_jshint_exec = "/usr/local/bin/jshint"
 
 " tComment
-Bundle "tComment"
 nnoremap // :TComment<CR>
 vnoremap // :TComment<CR>
 
@@ -96,10 +105,9 @@ map <leader><space> :noh<cr>
 syntax on
 set t_Co=256
 set background=dark
-colorscheme wombat
+colorscheme wombat256mod
 
 set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
-set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [TYPE=%Y\ %{&ff}]%=[%l/%L\]\ (%p%%)
 filetype plugin indent on
 au FileType py set autoindent
 au FileType py set smartindent
@@ -202,7 +210,7 @@ nnoremap ; :
 inoremap # X<BS>#
 
 if has('gui_running')
-    set gfn=Inconsolata\ Medium\ 12
+    set gfn=Inconsolata-dz\ for\ Powerline\ 11
     colorscheme solarized
 
     set go-=T
