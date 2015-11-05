@@ -23,4 +23,19 @@ bindkey "^[[1;5D" backward-word
 
 export WORKON_HOME=$HOME/envs
 export PROJECT_HOME=$HOME/projects
-source /usr/local/bin/virtualenvwrapper.sh
+
+# Source GDS aliases
+. ~/.gds_aliases
+
+# rbenv
+eval "$(rbenv init -)"
+
+#JAVA_HOME
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+# Go lang PATH
+export GOPATH=/Users/davidking/.gocode
+
+# PATH
+export PATH=/Applications/Postgres.app/Contents/Versions/9.4/bin:/Users/davidking/Library/elasticsearch-1.7.1/bin:/Users/davidking/Library/Python/2.7/bin:$GOPATH/bin:$PATH
+

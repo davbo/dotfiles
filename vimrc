@@ -33,6 +33,7 @@ Plugin 'wombat256.vim'
 Plugin 'rstacruz/sparkup'
 Plugin 'bling/vim-airline'
 Plugin 'tComment'
+Plugin 'wting/rust.vim'
 
 call vundle#end()
 
@@ -42,6 +43,9 @@ filetype plugin indent on
 let g:sparkupNextMapping = '<c-x>'
 
 set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [TYPE=%Y\ %{&ff}]%=[%l/%L\]\ (%p%%)
+
+let g:airline#extensions#tabline#left_sep = '|'
+let g:airline#extensions#tabline#right_sep = '|'
 
 " BAD pyflakes!
 let g:pyflakes_use_quickfix = 0
@@ -108,7 +112,6 @@ set background=dark
 colorscheme wombat256mod
 
 set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
-filetype plugin indent on
 au FileType py set autoindent
 au FileType py set smartindent
 let g:pymode_indent = 0
@@ -140,6 +143,7 @@ au BufNewFile,BufRead *.html map <leader>ft Vatzf
 " Various syntax stuff
 au BufNewFile,BufRead *.less set filetype=less
 au BufRead,BufNewFile *.scss set filetype=scss
+au BufRead,BufNewFile *.gradle set filetype=groovy
 
 " Handlebars
 au BufRead,BufNewFile *.handlebars set filetype=handlebars
@@ -200,7 +204,6 @@ nnoremap ; :
 inoremap # X<BS>#
 
 if has('gui_running')
-    set gfn=Inconsolata-dz\ for\ Powerline\ 11
     colorscheme solarized
 
     set go-=T
