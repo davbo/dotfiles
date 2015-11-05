@@ -165,17 +165,7 @@ for p in sys.path:
         vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
 EOF
 
-" From http://fishshell.org/wiki/moin.cgi/Recipes at 2008-01-06
-" Why does VIM give error messages when started from fish?
-" (Thanks to James Vega for this solution) 
-"
-" When run from the fish shell, VIM gives error messages like: "E484: Can't open file /tmp/v916556/0" 
-"
-" The problem occurs because VIM expects to be run from a POSIX shell, although this is not mentioned anywhere in the documentation. A workaround is to add the following lines to the your local ~/.vimrc or global /etc/vimrc file:
-if $SHELL =~ 'bin/fish'
-    set shell=/bin/sh
-endif
-" Assuming /bin/sh is a link to a POSIX compliant shell - even minimal shells like 'ash' or 'dash' will do.
+set shell=/bin/bash
 
 " Syntax for multiple tag files are
 " set tags=/my/dir1/tags, /my/dir2/tags
@@ -221,3 +211,25 @@ if has('gui_running')
 
     highlight SpellBad term=underline gui=undercurl guisp=Orange
 endif
+
+function! RemoveNewlines(string)
+    return join(split(a:string, "\n"), "")
+endfunction
+
+function! DisplayX509()
+    silent execute 'normal! "xyit'
+    let raw_cert = RemoveNewlines(@x)
+    let num_lines = len(raw_cert)/64
+    let i = 0
+    let cert_lines = []
+    while i <= num_lines
+        let line = raw_cert[i*64 : ((i+1)*64)-1]
+        if len(line)!=0
+            let cert_lines = add(cert_lines, line)
+        endif
+        let i += 1
+    endwhile
+    let cert = "-----BEGIN CERTIFICATE-----\n" . join(cert_lines, "\n") . "\n-----END CERTIFICATE-----"
+    echo system("bash -c \"cat <<EOF | openssl x509 -text -noout\n" . cert . "\nEOF\"")
+endfunction
+nnoremap <buffer> <leader>x :call DisplayX509()<cr>
